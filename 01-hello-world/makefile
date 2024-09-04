@@ -6,10 +6,10 @@ debug_args := -ggdb -pedantic-errors -Wall -Weffc++ -Wextra -Wconversion -Wsign-
 # Use -O2 -DNDEBUG for release builds
 release_args := -O2 -DNDEBUG
 
-all: HelloWorld
+all: main
 
-HelloWorld: HelloWorld.cpp
-	g++ $(debug_args) -o HelloWorld HelloWorld.cpp
+main: main.cpp
+	g++ $(debug_args) -o main main.cpp
 	# g++ $(release_args) -o HelloWorld HelloWorld.cpp
 
 clean:
