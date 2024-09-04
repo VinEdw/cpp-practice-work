@@ -1,9 +1,9 @@
 debug_args := -ggdb -pedantic-errors -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Werror
 
-all: double_triple
+all: main
 
-double_triple: double_triple.cpp
-	g++ $(debug_args) -o double_triple double_triple.cpp
+main: main.cpp
+	g++ $(debug_args) -o main main.cpp
 
 clean:
-	rm -f double_triple
+	rm -f main

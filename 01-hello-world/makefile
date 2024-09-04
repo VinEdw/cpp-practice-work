@@ -13,4 +13,4 @@ main: main.cpp
 	# g++ $(release_args) -o HelloWorld HelloWorld.cpp
 
 clean:
-	rm -f HelloWorld
+	rm -f main

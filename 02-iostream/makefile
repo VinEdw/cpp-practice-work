@@ -1,9 +1,9 @@
 debug_args := -ggdb -pedantic-errors -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Werror
 
-all: iostream
+all: main
 
-iostream: iostream.cpp
-	g++ $(debug_args) -o iostream iostream.cpp
+main: main.cpp
+	g++ $(debug_args) -o main main.cpp
 
 clean:
-	rm -f iostream
+	rm -f main
