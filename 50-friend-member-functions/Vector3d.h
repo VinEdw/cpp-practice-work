@@ -10,7 +10,12 @@ class Vector3d {
     double m_z{};
 
   public:
-    Vector3d(double x, double y, double z);
+    Vector3d(double x, double y, double z)
+      : m_x { x }
+      , m_y { y }
+      , m_z { z }
+    {
+    }
 
     void print() const;
     friend void Point3d::move_by_vector(const Vector3d& v);
