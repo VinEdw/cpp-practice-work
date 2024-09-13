@@ -74,15 +74,17 @@ double get_dead_weight_loss(const Coefficients& supply, const Coefficients& dema
 // Section: main
 
 int main() {
-  std::cout << "This model assumes that the supply and demand curves are both linear, and that a constant tax may added on the producers.\n";
+  std::cout << "This model assumes that the supply and demand curves are both linear, and that a constant tax may be imposed by the government.\n";
 
   Coefficients supply { get_supply_coefficients() };
   Coefficients demand { get_demand_coefficients() };
   double tax { get_tax() };
 
   std::cout << '\n';
-  std::cout << "Equilibrium Quantity: " << get_equilibrium_quantity(supply, demand, tax) << '\n';
-  std::cout << "Equilibrium Price: " << get_equilibrium_price(supply, demand, tax) << '\n';
+  std::cout << "Equilibrium Quantity (No Tax): " << get_equilibrium_quantity(supply, demand, 0.0) << '\n';
+  std::cout << "Equilibrium Price (No Tax): " << get_equilibrium_price(supply, demand, 0.0) << '\n';
+  std::cout << "Actual Quantity: " << get_equilibrium_quantity(supply, demand, tax) << '\n';
+  std::cout << "Price Consumers Pay: " << get_equilibrium_price(supply, demand, tax) << '\n';
   std::cout << "Price Producers Receive: " << get_price_producers_receive(supply, demand, tax) << '\n';
   std::cout << "Consumer Surplus: " << get_consumer_surplus(supply, demand, tax) << '\n';
   std::cout << "Producer Surplus: " << get_producer_surplus(supply, demand, tax) << '\n';
