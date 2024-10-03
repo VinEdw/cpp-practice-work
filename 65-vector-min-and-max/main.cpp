@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 #include <utility>
 #include <vector>
 
@@ -50,6 +51,33 @@ int main() {
 
   std::vector v2 { 5.5, 2.7, 3.3, 7.6, 1.2, 8.8, 6.6 };
   print_min_max(v2);
+
+  std::cout << '\n';
+
+  std::vector<int> v3{};
+  std::cout << "Enter numbers to add (use -1 to stop): ";
+  while (true) {
+    int x{};
+    std::cin >> x;
+    if (x == -1) {
+      break;
+    }
+
+    if (!std::cin) {
+      std::cin.clear();
+      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+      continue;
+    }
+
+    v3.push_back(x);
+  }
+
+  if (v3.empty()) {
+    std::cout << "The array has no elements\n";
+  }
+  else {
+    print_min_max(v3);
+  }
 
   return 0;
 }
