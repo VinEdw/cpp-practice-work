@@ -5,7 +5,7 @@ namespace ProgramData {
 }
 
 bool check_if_perfect_square(int x) {
-  for (auto e : ProgramData::perfect_squares) {
+  for (const auto& e : ProgramData::perfect_squares) {
     if (x == e) {
       return true;
     }
