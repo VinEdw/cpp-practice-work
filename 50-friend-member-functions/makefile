@@ -4,14 +4,14 @@ objects = main.o Point3d.o Vector3d.o
 main: $(objects)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-main.o: main.cpp Point3d.h Vector3d.h
+$(objects): %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+main.o: main.cpp Point3d.h Vector3d.h
 
 Point3d.o: Point3d.cpp Point3d.h Vector3d.h
-	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 Vector3d.o: Vector3d.cpp Vector3d.h
-	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 .PHONY: clean
 clean:
