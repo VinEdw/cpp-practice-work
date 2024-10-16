@@ -1,5 +1,5 @@
 CXXFLAGS := -ggdb -pedantic-errors -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Werror
-objects = main.o Point2d.o
+objects := main.o Point2d.o
 
 main: $(objects)
 	$(CXX) $(CXXFLAGS) $^ -o $@
