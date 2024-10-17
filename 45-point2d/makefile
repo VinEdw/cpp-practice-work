@@ -4,11 +4,12 @@ objects := main.o Point2d.o
 main: $(objects)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-main.o: main.cpp Point2d.h
+$(objects): %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+main.o: main.cpp Point2d.h
+
 Point2d.o: Point2d.cpp Point2d.h
-	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 .PHONY: clean
 clean:
