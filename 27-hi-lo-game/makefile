@@ -4,14 +4,14 @@ objects := main.o extraction.o prompts.o
 main: $(objects)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-main.o: main.cpp Random.h prompts.h
+$(objects): %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+main.o: main.cpp Random.h prompts.h
 
 extraction.o: extraction.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 prompts.o: prompts.cpp prompts.h extraction.h 
-	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 .PHONY: clean
 clean:
