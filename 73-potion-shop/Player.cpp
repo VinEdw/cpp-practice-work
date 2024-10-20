@@ -1,7 +1,14 @@
 #include <iostream>
 #include <string>
+#include "Random.h"
 #include "Player.h"
 #include "Potion.h"
+
+Player::Player(std::string_view name)
+  : m_name { name }
+  , m_gold { Random::get(s_min_starting_gold, s_max_starting_gold) }
+{
+}
 
 bool Player::buy(Potion::Type p) {
   int cost { Potion::cost[p] };

@@ -3,7 +3,6 @@
 
 #include <string>
 #include <string_view>
-#include "Random.h"
 #include "Potion.h"
 
 class Player {
@@ -16,11 +15,7 @@ class Player {
     std::array<int, Potion::max_potions> m_inventory{};
 
   public:
-    explicit Player(std::string_view name)
-      : m_name { name }
-      , m_gold { Random::get(s_min_starting_gold, s_max_starting_gold) }
-    {
-    }
+    explicit Player(std::string_view name);
 
     const std::string& name() const { return m_name; };
     int gold() const { return m_gold; }
