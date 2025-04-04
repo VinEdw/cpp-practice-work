@@ -7,17 +7,17 @@ TARGET_EXEC := main
 
 # Set the build and source directories
 BUILD_DIR := ./build
-SRC_DIRS := ./src
+SRC_DIR := ./src
 
 # Find all the C and C++ files in the source directory
-SRCS := $(shell find $(SRC_DIRS) -name '*.cpp' -or -name '*.c')
+SRCS := $(shell find $(SRC_DIR) -name '*.cpp' -or -name '*.c')
 
 # Each C or C++ file should be compiled into an object file (.o) and a dependency file (.d)
 OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
 DEPS := $(OBJS:.o=.d)
 
 # Include each folder in the source directory in the list to be searched for header files
-INC_DIRS := $(shell find $(SRC_DIRS) -type d)
+INC_DIRS := $(shell find $(SRC_DIR) -type d)
 INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 
 # Flags to provide warnings and debugging information
