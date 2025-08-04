@@ -16,6 +16,8 @@ int main() {
   if (!value) {
     std::cerr << "Could not allocate memory\n";
   }
+  delete value;
+  value = nullptr;
 
   return 0;
 }
